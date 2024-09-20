@@ -1,0 +1,26 @@
+<div class="container">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label>
+                Nombre de usuario:
+                <input formControlName="username"/>
+            </label>
+            <span *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">
+                Nombre de usuario requerido.
+            </span>
+        </div>
+    
+        <div>
+            <label>
+                Contraseña:
+                <input type="password" formControlName="password" />
+            </label>
+            <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+                <span *ngIf="loginForm.get('password')?.errors?.['required']">Contraseña requerida.</span>
+                <span *ngIf="loginForm.get('password')?.errors?.['minlength']">Contraseña demasiado corta. Mínimo 3 caracteres.</span>
+            </div>
+        </div>
+    
+        <button type="submit" [disabled]="!loginForm.valid">Ingresar</button>
+    </form>
+</div>

@@ -1,0 +1,25 @@
+
+<div class="container">
+
+    <button (click)="uploadItem()">Agregar Producto</button>
+
+    <table>
+
+        <thead>
+            <tr>
+                <td>Nombre</td>
+                <td>Stock</td>
+                <td>Actualización</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of products">
+                <td>{{item.productName}}</td>
+                <td>{{item.productStock}}</td>
+                <td>{{item.productLastUpdate}}</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>

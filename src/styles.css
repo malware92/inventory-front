@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+    font-family: Poppins;
+}
+
+button {
+    background-color: #5ca0ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: .5rem 2rem;
+    cursor: pointer
+}
